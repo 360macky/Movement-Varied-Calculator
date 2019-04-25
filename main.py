@@ -35,6 +35,8 @@ if datoFaltante == 'd':
             resultado = str(resultado)
             print("El resultado es:\n" + resultado + "m/s")
         d_vf(vo,a,t)
+
+
     elif incognita == 'vo':
         vf = int(input("Ingresa la velocidad final: "))
         a = int(input("Ingresa la aceleración: "))
@@ -44,6 +46,8 @@ if datoFaltante == 'd':
             resultado = str(resultado)
             print("El resultado es:\n" + resultado + "m/s")
         d_vo(vf,a,t)
+
+
     elif incognita == 'a':
         vf = int(input("Ingresa la velocidad final: "))
         vo = int(input("Ingresa la velocidad inicial: "))
@@ -53,6 +57,17 @@ if datoFaltante == 'd':
             resultado = str(resultado)
             print("El resultado es:\n" + resultado + "m/s^2")
         d_a(vf,vo,t)
+
+
+    elif incognita == 't':
+        vf = int(input("Ingresa la velocidad final: "))
+        vo = int(input("Ingresa la velocidad inicial: "))
+        t = int(input("Ingresa la aceleración: "))
+        def d_t(vf, vo, a):
+            resultado = (vo+vf)/a
+            resultado = str(resultado)
+            print("El resultado es:\n" + resultado + "s")
+        d_a(vf,vo,a)
 
 elif datoFaltante == 'a':
     print("Intentas hallar la aceleración")
