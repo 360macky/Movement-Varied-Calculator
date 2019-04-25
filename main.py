@@ -90,12 +90,12 @@ elif datoFaltante == 'vf':
         vo = int(input("Ingresa la velocidad inicial "))
         a = int(input("Ingresa la aceleración "))
         t = int(input("Ingresa el tiempo "))
-    def vf_d(vo,a,t):
-        resultado = vo*t+((a*(t**2))/2)
-        resultado = str(resultado)
-        print("El resultado es:\n" + resultado)
+        def vf_d(vo,a,t):
+            resultado = vo*t+((a*(t**2))/2)
+            resultado = str(resultado)
+            print("El resultado es:\n" + resultado)
 
-    vf_d(vo,a,t)
+        vf_d(vo,a,t)
 
 elif datoFaltante == 't':
     print("Intentas hallar el tiempo")
