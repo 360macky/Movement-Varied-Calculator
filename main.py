@@ -110,11 +110,12 @@ elif datoFaltante == 'vf':
         def vf_d(vo,a,t):
             resultado = vo*t+((a*(t**2))/2)
             resultado = str(resultado)
-            print("El resultado es:\n" + resultado)
-
+            print("El resultado es:\n" + resultado + "m")
         vf_d(vo,a,t)
 
 elif datoFaltante == 't':
-    print("Intentas hallar el tiempo")
+    print("d - Distancia, vo - Velocidad Inicial, t - Tiempo, a - Aceleración")
+    incognita = str(input("Genial, ingresa la variable que deseas hallar: "))
+
 else:
     print("Variable incorrecta o no ingresada")
