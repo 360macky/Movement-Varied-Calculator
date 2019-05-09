@@ -88,6 +88,18 @@ elif datoFaltante == 'a':
     print("vo - Velocidad Inicial, vf - Velocidad Final, t - Tiempo, d - Distancia")
     incognita = str(input("Genial, ingresa la variable que deseas hallar: "))
 
+    # Hallar la velocidad final
+    if incognita == 'vo':
+        d = int(input("Ingresa la distancia "))
+        vf = int(input("Ingresa velocidad final "))
+        t = int(input("Ingresa el tiempo "))
+        def a_d(d,vf,t):
+            resultado = ((2*d)/t)-vf
+            resultado = str(resultado)
+            print("El resultado es:\n" + resultado + "m/s")
+        a_d(d,vf,t)
+
+
     # Hallar la distancia
     if incognita == 'd':
         vo = int(input("Ingresa la velocidad inicial "))
