@@ -135,5 +135,11 @@ elif datoFaltante == 't':
     if incognita == 'vo':
         pass
 
+    if incognita == 'a':
+        pass
+
+    if incognita == 'vf':
+        pass
+
 else:
     print("Variable incorrecta o no ingresada")
