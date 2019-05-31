@@ -9,22 +9,11 @@ print("MoveMind - MRUV Calculator Python")
 # |_|  |_|    \/      \_____|\__,_||_| \___| \__,_||_| \__,_| \__|\___/ |_|
 #
 
-
-
-
 # Tenemos cuatro fórmulas
 # First -> No tiene distancia
 # Second -> No tiene aceleración
 # Third -> No tiene velocidad final
 # Quarter -> No tiene tiempo
-
-#  __  __ __      __   _____        _               _         _
-# |  \/  |\ \    / /  / ____|      | |             | |       | |
-# | \  / | \ \  / /  | |      __ _ | |  ___  _   _ | |  __ _ | |_  ___   _ __
-# | |\/| |  \ \/ /   | |     / _` || | / __|| | | || | / _` || __|/ _ \ | '__|
-# | |  | |   \  /    | |____| (_| || || (__ | |_| || || (_| || |_| (_) || |
-# |_|  |_|    \/      \_____|\__,_||_| \___| \__,_||_| \__,_| \__|\___/ |_|
-#
 
 
 # Solicitar la variable que falta en la ecuación
