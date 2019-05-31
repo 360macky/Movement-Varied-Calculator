@@ -9,13 +9,11 @@ print("MoveMind - MRUV Calculator Python")
 # |_|  |_|    \/      \_____|\__,_||_| \___| \__,_||_| \__,_| \__|\___/ |_|
 #
 
-print("--------------------------------------------------------------")
-
-print("_  _ _  _    ____ ____ _    ____ _  _ _    ____ ___ ____ ____ ")
-print("|\/| |  |    |    |__| |    |    |  | |    |__|  |  |  | |__/ ")
-print("|  |  \/     |___ |  | |___ |___ |__| |___ |  |  |  |__| |  \ ")
-
-print("--------------------------------------------------------------")
+print("------------------------------------------------------------------")
+print("| _  _ _  _    ____ ____ _    ____ _  _ _    ____ ___ ____ ____  |")
+print("| |\/| |  |    |    |__| |    |    |  | |    |__|  |  |  | |__/  |")
+print("| |  |  \/     |___ |  | |___ |___ |__| |___ |  |  |  |__| |  \  |")
+print("------------------------------------------------------------------")
 
 # Tenemos cuatro fórmulas
 # First -> No tiene distancia
@@ -25,11 +23,11 @@ print("--------------------------------------------------------------")
 
 
 # Solicitar la variable que falta en la ecuación
-print("d - Distancia")
-print("a - Aceleración")
-print("vf - Velocidad final")
-print("t - Tiempo")
-datoFaltante = str(input("¿Qué variable te falta en la ecuación? "))
+print("| d  | - Distancia")
+print("| a  | - Aceleración")
+print("| vf | - Velocidad final")
+print("| t  | - Tiempo")
+datoFaltante = str(input(">>¿Qué variable te falta en la ecuación? "))
 
 if datoFaltante == 'd':
     # Usaremos el dato que oculte la Distancia
