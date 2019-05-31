@@ -126,8 +126,14 @@ elif datoFaltante == 'vf':
         vf_d(vo,a,t)
 
 elif datoFaltante == 't':
-    print("d - Distancia, vo - Velocidad Inicial, t - Tiempo, a - Aceleración")
+    print("d - Distancia, vo - Velocidad Inicial, a - Aceleración, Vf - Velocidad final")
     incognita = str(input("Genial, ingresa la variable que deseas hallar: "))
+
+    if incognita == 'd':
+        pass
+
+    if incognita == 'vo':
+        pass
 
 else:
     print("Variable incorrecta o no ingresada")
