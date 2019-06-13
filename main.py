@@ -131,7 +131,17 @@ elif datoFaltante == 't':
         pass
 
     if incognita == 'a':
-        pass
+        vo = int(input("Ingresa la velocidad inicial "))
+        vf = int(input("Ingresa la velocidad final "))
+        d = int(input("Ingresa el tiempo "))
+        
+        def t_a(vo,vf,d):
+            resultado = (((vf)**2)/(2*d))-((vo)/(2*d))
+            resultado = round(resultado, 2)
+            resultado = str(resultado)
+            print("El resultado es:\n" + resultado + "m/s")
+        t_a(vo,vf,d)
+
 
     if incognita == 'vf':
         vo = int(input("Ingresa la velocidad inicial "))
