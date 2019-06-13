@@ -134,7 +134,15 @@ elif datoFaltante == 't':
         pass
 
     if incognita == 'vf':
-        pass
+        vo = int(input("Ingresa la velocidad inicial "))
+        a = int(input("Ingresa la aceleración "))
+        d = int(input("Ingresa el tiempo "))
+        def vf_d(vo,a,d):
+            resultado = math.sqrt(((vo)**2)+2*a*d)
+            resultado = round(resultado, 2)
+            resultado = str(resultado)
+            print("El resultado es:\n" + resultado + "m/s")
+        vf_d(vo,a,d)
 
 else:
     print("Variable incorrecta o no ingresada")
