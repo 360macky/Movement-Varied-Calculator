@@ -1,4 +1,4 @@
-print("MoveMind - MRUV Calculator Python")
+print("Movement-Varied-Calculator - MRUV Calculator Python")
 
 
 #  __  __ __      __   _____        _               _         _
