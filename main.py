@@ -71,7 +71,7 @@ if datoFaltante == 'd':
     elif incognita == 't':
         vf = int(input("Ingresa la velocidad final: "))
         vo = int(input("Ingresa la velocidad inicial: "))
-        t = int(input("Ingresa la aceleración: "))
+        a = int(input("Ingresa la aceleración: "))
         def d_t(vf, vo, a):
             resultado = (vo+vf)/a
             resultado = str(resultado)
@@ -148,7 +148,7 @@ elif datoFaltante == 't':
         a = int(input("Ingresa la aceleración "))
         d = int(input("Ingresa el tiempo "))
         def vf_d(vo,a,d):
-            resultado = math.sqrt(((vo)**2)+2*a*d)
+            resultado = (((vo)**2)+2*a*d)**(1/2)
             resultado = round(resultado, 2)
             resultado = str(resultado)
             print("El resultado es:\n" + resultado + "m/s")
