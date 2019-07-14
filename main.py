@@ -125,7 +125,15 @@ elif datoFaltante == 't':
     incognita = str(input("Genial, ingresa la variable que deseas hallar: "))
 
     if incognita == 'd':
-        pass
+        vo = int(input("Ingresa la velocidad inicial "))
+        a = int(input("Ingresa la aceleración "))
+        vf = int(input("Ingresa la velocidad final "))
+        def t_d(vo,a,vf):
+            resultado = ((vf**2)/(2*a)) - ((vo**2)/(2*a))
+            resultado = round(resultado, 2)
+            resultado = str(resultado)
+            print("El resultado es:\n" + resultado + "m")
+        t_d(vo,a,vf)
 
     if incognita == 'vo':
         pass
