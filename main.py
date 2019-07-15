@@ -122,6 +122,15 @@ elif datoFaltante == 'vf':
             print("El resultado es:\n" + resultado + "m")
         vf_d(vo,a,t)
 
+    if incognita == 'vo':
+        pass
+
+    if incognita == 't':
+        pass
+
+    if incognita == 'a':
+        pass
+
 elif datoFaltante == 't':
     print("d - Distancia, vo - Velocidad Inicial, a - Aceleración, Vf - Velocidad final")
     incognita = str(input("Genial, ingresa la variable que deseas hallar: "))
@@ -165,7 +174,7 @@ elif datoFaltante == 't':
         a = int(input("Ingresa la aceleración "))
         d = int(input("Ingresa el tiempo "))
         def vf_d(vo,a,d):
-            resultado = (((vo)**2)+2*a*d)**(1/2)
+            resultado = (((vo)**2)+2*a*d)**(2/1)
             resultado = round(resultado, 2)
             resultado = str(resultado)
             print("El resultado es:\n" + resultado + "m/s")
