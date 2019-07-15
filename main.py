@@ -1,3 +1,5 @@
+import math
+
 print("Movement-Varied-Calculator - MRUV Calculator Python")
 
 
@@ -136,13 +138,20 @@ elif datoFaltante == 't':
         t_d(vo,a,vf)
 
     if incognita == 'vo':
-        pass
+        d = int(input("Ingresa la distancia "))
+        vf = int(input("Ingresa la velocidad final "))
+        a = int(input("Ingresa la aceleracion "))
+        def t_vo(d,vf,a):
+            resultado = math.sqrt((vf**2)-(2*a*d))
+            resultado = round(resultado, 2)
+            resultado = str(resultado)
+            print("El resultado es:\n" + resultado + "m/s")
+        t_vo(d, vf, a)
 
     if incognita == 'a':
         vo = int(input("Ingresa la velocidad inicial "))
         vf = int(input("Ingresa la velocidad final "))
         d = int(input("Ingresa el tiempo "))
-        
         def t_a(vo,vf,d):
             resultado = (((vf)**2)/(2*d))-((vo)/(2*d))
             resultado = round(resultado, 2)
