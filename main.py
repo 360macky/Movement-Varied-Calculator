@@ -1,7 +1,4 @@
-import math
-
 print("Movement-Varied-Calculator - MRUV Calculator Python")
-
 
 #  __  __ __      __   _____        _               _         _
 # |  \/  |\ \    / /  / ____|      | |             | |       | |
@@ -17,168 +14,187 @@ print("| |\/| |  |    |    |__| |    |    |  | |    |__|  |  |  | |__/  |")
 print("| |  |  \/     |___ |  | |___ |___ |__| |___ |  |  |  |__| |  \  |")
 print("------------------------------------------------------------------")
 
-# Tenemos cuatro fórmulas
-# First -> No tiene distancia
-# Second -> No tiene aceleración
-# Third -> No tiene velocidad final
-# Quarter -> No tiene tiempo
+not_distance_find_final_velocity = lambda iv, a, t: iv + a * t
+not_distance_find_initial_velocity = lambda fv, a, t: fv - a * t
 
+print("| d  | Distancia       |")
+print("| a  | Aceleración     |")
+print("| vf | Velocidad final |")
+print("| t  | Tiempo          |")
 
-# Solicitar la variable que falta en la ecuación
-print("| d  | - Distancia")
-print("| a  | - Aceleración")
-print("| vf | - Velocidad final")
-print("| t  | - Tiempo")
-datoFaltante = str(input(">>¿Qué variable te falta en la ecuación? "))
+missingData = str(input(">>¿Qué variable te falta en la ecuación? "))
 
-if datoFaltante == 'd':
-    # Usaremos el dato que oculte la Distancia
+if missingData == 'd':
     print("vo - Velocidad Inicial, t - Tiempo, a - Aceleración")
-    incognita = str(input("Genial, ingresa la variable que deseas hallar: "))
+    unknown = str(input(">> Genial, ingresa la variable que deseas hallar: "))
 
-    # Hallar la Velocidad Final
-    if incognita == 'vf':
-        vo = int(input("Ingresa la velocidad inicial "))
-        a = int(input("Ingresa la aceleración "))
-        t = int(input("Ingresa el tiempo "))
-        def d_vf(vo,a,t):
-            resultado = vo+a*t
-            resultado = str(resultado)
-            print("El resultado es:\n" + resultado + "m/s")
-        d_vf(vo,a,t)
+    if unknown == 'vf':
+        initial_velocity = int(input("Ingresa la velocidad inicial "))
+        acceleration = int(input("Ingresa la aceleración "))
+        time = int(input("Ingresa el tiempo "))
+        result = not_distance_find_final_velocity(initial_velocity, acceleration, time)
+        print("El resultado es:\n", result, "m/s")
 
-    # Hallar la Velocidad Final
-    elif incognita == 'vo':
-        vf = int(input("Ingresa la velocidad final: "))
-        a = int(input("Ingresa la aceleración: "))
-        t = int(input("Ingresa el tiempo: "))
-        def d_vo(vf,a,t):
-            resultado = vf-a*t
-            resultado = str(resultado)
-            print("El resultado es:\n" + resultado + "m/s")
-        d_vo(vf,a,t)
+    # Find final velocity
+    elif unknown == 'vo':
+        final_velocity = int(input("Ingresa la velocidad final: "))
+        acceleration = int(input("Ingresa la aceleración: "))
+        time = int(input("Ingresa el tiempo: "))
 
-    # Hallar la Aceleración
-    elif incognita == 'a':
+        result = not_distance_find_initial_velocity(final_velocity, acceleration, time)
+        print("El resultado es:\n", result, "m/s")
+
+    # Find acceleration
+    elif unknown == 'a':
         vf = int(input("Ingresa la velocidad final: "))
         vo = int(input("Ingresa la velocidad inicial: "))
         t = int(input("Ingresa el tiempo: "))
+
         def d_a(vf, vo, t):
-            resultado = (vf*t)/vo
+            resultado = (vf * t) / vo
             resultado = str(resultado)
             print("El resultado es:\n" + resultado + "m/s^2")
-        d_a(vf,vo,t)
 
-    # Hallar el Tiempo
-    elif incognita == 't':
+        d_a(vf, vo, t)
+
+    # Find time
+    elif unknown == 't':
         vf = int(input("Ingresa la velocidad final: "))
         vo = int(input("Ingresa la velocidad inicial: "))
         a = int(input("Ingresa la aceleración: "))
+
+
         def d_t(vf, vo, a):
-            resultado = (vo+vf)/a
+            resultado = (vo + vf) / a
             resultado = str(resultado)
             print("El resultado es:\n" + resultado + "s")
-        d_t(vf,vo,a)
 
-elif datoFaltante == 'a':
-    # Usaremos el dato que oculte la Distancia
+
+        d_t(vf, vo, a)
+
+elif missingData == 'a':
     print("vo - Velocidad Inicial, vf - Velocidad Final, t - Tiempo, d - Distancia")
-    incognita = str(input("Genial, ingresa la variable que deseas hallar: "))
+    unknown = str(input("Genial, ingresa la variable que deseas hallar: "))
 
-    # Hallar la velocidad final
-    if incognita == 'vo':
+    # Find final velocity
+    if unknown == 'vo':
         d = int(input("Ingresa la distancia "))
         vf = int(input("Ingresa velocidad final "))
         t = int(input("Ingresa el tiempo "))
-        def a_d(d,vf,t):
-            resultado = ((2*d)/t)-vf
+
+        def a_d(d, vf, t):
+            resultado = ((2 * d) / t) - vf
             resultado = str(resultado)
             print("El resultado es:\n" + resultado + "m/s")
-        a_d(d,vf,t)
 
 
-    # Hallar la distancia
-    if incognita == 'd':
+        a_d(d, vf, t)
+
+    # Find distance
+    if unknown == 'd':
         vo = int(input("Ingresa la velocidad inicial "))
         vf = int(input("Ingresa velocidad final "))
         t = int(input("Ingresa el tiempo "))
-        def a_d(vo,vf,t):
-            resultado = ((vf+vo)/2)*t
+
+
+        def a_d(vo, vf, t):
+            resultado = ((vf + vo) / 2) * t
             resultado = str(resultado)
             print("El resultado es:\n" + resultado + "m")
-        a_d(vo,vf,t)
 
-elif datoFaltante == 'vf':
+
+        a_d(vo, vf, t)
+
+elif missingData == 'vf':
+
     print("d - Distancia, vo - Velocidad Inicial, t - Tiempo, a - Aceleración")
-    incognita = str(input("Genial, ingresa la variable que deseas hallar: "))
+    unknown = str(input("Genial, ingresa la variable que deseas hallar: "))
 
-    if incognita == 'd':
+    # Find distance
+    if unknown == 'd':
         vo = int(input("Ingresa la velocidad inicial "))
         a = int(input("Ingresa la aceleración "))
         t = int(input("Ingresa el tiempo "))
-        def vf_d(vo,a,t):
-            resultado = vo*t+((a*(t**2))/2)
+
+        def vf_d(vo, a, t):
+            resultado = vo * t + ((a * (t ** 2)) / 2)
             resultado = str(resultado)
             print("El resultado es:\n" + resultado + "m")
-        vf_d(vo,a,t)
 
-    if incognita == 'vo':
+
+        vf_d(vo, a, t)
+
+    if unknown == 'vo':
         pass
 
-    if incognita == 't':
+    if unknown == 't':
         pass
 
-    if incognita == 'a':
+    if unknown == 'a':
         pass
 
-elif datoFaltante == 't':
+elif missingData == 't':
     print("d - Distancia, vo - Velocidad Inicial, a - Aceleración, Vf - Velocidad final")
-    incognita = str(input("Genial, ingresa la variable que deseas hallar: "))
+    unknown = str(input("Genial, ingresa la variable que deseas hallar: "))
 
-    if incognita == 'd':
+    if unknown == 'd':
         vo = int(input("Ingresa la velocidad inicial "))
         a = int(input("Ingresa la aceleración "))
         vf = int(input("Ingresa la velocidad final "))
-        def t_d(vo,a,vf):
-            resultado = ((vf**2)/(2*a)) - ((vo**2)/(2*a))
+
+        def t_d(vo, a, vf):
+            resultado = ((vf ** 2) / (2 * a)) - ((vo ** 2) / (2 * a))
             resultado = round(resultado, 2)
             resultado = str(resultado)
             print("El resultado es:\n" + resultado + "m")
-        t_d(vo,a,vf)
 
-    if incognita == 'vo':
+
+        t_d(vo, a, vf)
+
+    if unknown == 'vo':
         d = int(input("Ingresa la distancia "))
         vf = int(input("Ingresa la velocidad final "))
         a = int(input("Ingresa la aceleracion "))
-        def t_vo(d,vf,a):
-            resultado = math.sqrt((vf**2)-(2*a*d))
+
+
+        def t_vo(d, vf, a):
+            resultado = math.sqrt((vf ** 2) - (2 * a * d))
             resultado = round(resultado, 2)
             resultado = str(resultado)
             print("El resultado es:\n" + resultado + "m/s")
+
+
         t_vo(d, vf, a)
 
-    if incognita == 'a':
+    if unknown == 'a':
         vo = int(input("Ingresa la velocidad inicial "))
         vf = int(input("Ingresa la velocidad final "))
         d = int(input("Ingresa el tiempo "))
-        def t_a(vo,vf,d):
-            resultado = (((vf)**2)/(2*d))-((vo)/(2*d))
+
+
+        def t_a(vo, vf, d):
+            resultado = (((vf) ** 2) / (2 * d)) - ((vo) / (2 * d))
             resultado = round(resultado, 2)
             resultado = str(resultado)
             print("El resultado es:\n" + resultado + "m/s")
-        t_a(vo,vf,d)
 
 
-    if incognita == 'vf':
+        t_a(vo, vf, d)
+
+    if unknown == 'vf':
         vo = int(input("Ingresa la velocidad inicial "))
         a = int(input("Ingresa la aceleración "))
         d = int(input("Ingresa el tiempo "))
-        def vf_d(vo,a,d):
-            resultado = (((vo)**2)+2*a*d)**(2/1)
+
+
+        def vf_d(vo, a, d):
+            resultado = (((vo) ** 2) + 2 * a * d) ** (2 / 1)
             resultado = round(resultado, 2)
             resultado = str(resultado)
             print("El resultado es:\n" + resultado + "m/s")
-        vf_d(vo,a,d)
+
+
+        vf_d(vo, a, d)
 
 else:
     print("Variable incorrecta o no ingresada")
