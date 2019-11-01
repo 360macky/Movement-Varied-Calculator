@@ -16,6 +16,31 @@ class MovementVariedCalculator:
             return initial_velocity + acceleration * time
         elif find == 'initial_velocity':
             return final_velocity - acceleration * time
+    def get_unknown_variable(self):
+        return str(input("Genial, ingresa la variable que deseas hallar: "))
+    def get_initial_velocity(self):
+        return int(input("Ingresa la velocidad inicial: "))
+    def get_final_velocity(self):
+        return int(input("Ingresa la velocidad final: "))            
+    def get_acceleration(self):
+        return int(input("Ingresa la aceleración: "))
+    def get_time(self):
+        return int(input("Ingresa el tiempo: "))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 mv = MovementVariedCalculator()
@@ -42,38 +67,41 @@ missingData = str(input(">> ¿Qué variable te falta en la ecuación? "))
 
 if missingData == 'd':
     print("vo - Velocidad Inicial, t - Tiempo, a - Aceleración")
-    unknown = str(input(">> Genial, ingresa la variable que deseas hallar: "))
+    unknown = mv.get_unknown_variable()
 
     # Find final velocity
     if unknown == 'vf':
-        initial_velocity = int(input("Ingresa la velocidad inicial "))
-        acceleration = int(input("Ingresa la aceleración "))
-        time = int(input("Ingresa el tiempo "))
+        initial_velocity = mv.get_initial_velocity()
+        acceleration = mv.get_acceleration()
+        time = mv.get_time()
+        
         result = mv.not_distance('velocity', initial_velocity, 0, acceleration, time)
         show_result(result, "m/s")
 
     # Find initial velocity
     elif unknown == 'vo':
-        final_velocity = int(input("Ingresa la velocidad final: "))
-        acceleration = int(input("Ingresa la aceleración: "))
-        time = int(input("Ingresa el tiempo: "))
+        final_velocity = mv.get_final_velocity()
+        acceleration = mv.get_acceleration()
+        time = mv.get_time()
 
         result = not_distance_find_initial_velocity(final_velocity, acceleration, time)
         print("El resultado es: ", result, "m/s")
 
     # Find acceleration
     elif unknown == 'a':
-        final_velocity = int(input("Ingresa la velocidad final: "))
-        initial_velocity = int(input("Ingresa la velocidad inicial: "))
-        time = int(input("Ingresa el tiempo: "))
+        final_velocity = mv.get_final_velocity()
+        initial_velocity = mv.get_initial_velocity()
+        time = mv.get_time()
+
         result = not_distance_find_acceleration(final_velocity, initial_velocity, time)
         print("El resultado es: ", result, "m/s^2")
 
     # Find time
     elif unknown == 't':
-        final_velocity = int(input("Ingresa la velocidad final: "))
-        initial_velocity = int(input("Ingresa la velocidad inicial: "))
-        acceleration = int(input("Ingresa la aceleración: "))
+        final_velocity = mv.get_final_velocity()
+        initial_velocity = mv.get_initial_velocity()
+        acceleration = mv.get_acceleration()
+        
         result = not_distance_find_time(final_velocity, initial_velocity, acceleration)
         print("El resultado es: ", result, "s")
 
