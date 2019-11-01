@@ -214,4 +214,4 @@ elif missingData == 't':
 
 else:
     print("Variable incorrecta o no ingresada")
-
+ 
