@@ -31,20 +31,6 @@ class MovementVariedCalculator:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 mv = MovementVariedCalculator()
 
 not_distance_find_final_velocity = lambda iv, a, t: iv + a * t
@@ -96,7 +82,7 @@ if missingData == 'd':
         time = mv.get_time()
 
         result = not_distance_find_acceleration(final_velocity, initial_velocity, time)
-        print("El resultado es: ", result, "m/s^2")
+        show_result(result, "m/s^2")
 
     # Find time
     elif unknown == 't':
@@ -105,7 +91,7 @@ if missingData == 'd':
         acceleration = mv.get_acceleration()
         
         result = not_distance_find_time(final_velocity, initial_velocity, acceleration)
-        print("El resultado es: ", result, "s")
+        show_result(result, "s")
 
 elif missingData == 'a':
     print("vo - Velocidad Inicial, vf - Velocidad Final, t - Tiempo, d - Distancia")
