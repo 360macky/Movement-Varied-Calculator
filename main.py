@@ -95,7 +95,7 @@ elif missingData == 'a':
         time = int(input("Ingresa el tiempo "))
         result = not_acceleration_find_initial_velocity(distance, final_velocity, time)
         show_result(result, "m/s")
-
+        
     # Find distance
     if unknown == 'd':
         iv = int(input("Ingresa la velocidad inicial "))
@@ -120,7 +120,6 @@ elif missingData == 'vf':
             resultado = vo * t + ((a * (t ** 2)) / 2)
             resultado = str(resultado)
             print("El resultado es:\n" + resultado + "m")
-
 
         vf_d(vo, a, t)
 
@@ -148,7 +147,6 @@ elif missingData == 't':
             resultado = round(resultado, 2)
             resultado = str(resultado)
             print("El resultado es:\n" + resultado + "m")
-
 
         t_d(vo, a, vf)
 
@@ -191,7 +189,6 @@ elif missingData == 't':
             resultado = round(resultado, 2)
             resultado = str(resultado)
             print("El resultado es:\n" + resultado + "m/s")
-
 
         vf_d(vo, a, d)
 
