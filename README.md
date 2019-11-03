@@ -1,6 +1,8 @@
 # Movement-Varied-Calculator
 Calculadora de Movimiento Rectilíneo Uniforme Variado en Python.
 
+![A Tesla](assets/img/car.jpg)
+
 ## ⚙️ Estructura
 El software solicita al usuario la variable que falta en la ecuación, y después solicita la variable que se desea hallar.
 
