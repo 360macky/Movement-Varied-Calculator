@@ -20,7 +20,7 @@ La calculadora utiliza Python 3.x
 python main.py
 ```
 ### GNU/Linux
-
+La calculadora utiliza Python 3.x
 ```
 python3 main.py
 ```
