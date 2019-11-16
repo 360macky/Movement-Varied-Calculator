@@ -1,12 +1,12 @@
 import math
 
-print("Movement-Varied-Calculator - MRUV Calculator Python")
-
-print("------------------------------------------------------------------")
-print("| _  _ _  _    ____ ____ _    ____ _  _ _    ____ ___ ____ ____  |")
-print("| |\/| |  |    |    |__| |    |    |  | |    |__|  |  |  | |__/  |")
-print("| |  |  \/     |___ |  | |___ |___ |__| |___ |  |  |  |__| |  \  |")
-print("------------------------------------------------------------------")
+print("------- Movement-Varied-Calculator - MRUV Calculator Python -------")
+print("-------------------------------------------------------------------")
+print("|  _  _ _  _    ____ ____ _    ____ _  _ _    ____ ___ ____ ____  |")
+print("|  |\/| |  |    |    |__| |    |    |  | |    |__|  |  |  | |__/  |")
+print("|  |  |  \/     |___ |  | |___ |___ |__| |___ |  |  |  |__| |  \  |")
+print("-------------------------------------------------------------------")
+print("----------------------- Physics with Python -----------------------")
 
 
 class MovementVariedCalculator:
@@ -21,6 +21,14 @@ class MovementVariedCalculator:
     # Equations without acceleration
     not_acceleration_find_initial_velocity = lambda self, d, fv, t: ((2 * d) / t) - fv
     not_acceleration_find_distance = lambda self, iv, fv, t: ((fv + iv) / 2) * t    
+
+    # Equations without final velocity
+    not_final_velocity_find_distance = lambda self, vo, a, t: vo * t + ((a * (t ** 2)) / 2)
+
+    # Equations without time
+    not_time_find_distance = lambda self, iv, a, fv: ((fv ** 2) / (2 * a)) - ((iv ** 2) / (2 * a))
+    not_time_find_initial_velocity = lambda self, d, fv, a: math.sqrt((fv ** 2) - (2 * a * d))
+    not_time_find_acceleration = lambda iv, fv, d: (((fv) ** 2) / (2 * d)) - ((iv) / (2 * d))
 
     def get_unknown_variable(self):
         return str(input("Genial, ingresa la variable que deseas hallar: "))
@@ -41,10 +49,10 @@ class MovementVariedCalculator:
 
 mv = MovementVariedCalculator()
 
-print("| d  | Distancia       |")
-print("| a  | Aceleración     |")
-print("| vf | Velocidad final |")
-print("| t  | Tiempo          |")
+print("| d  -> Distancia       |")
+print("| a  -> Aceleración     |")
+print("| vf -> Velocidad final |")
+print("| t  -> Tiempo          |")
 
 
 def show_result(result, type_result):
@@ -129,20 +137,20 @@ elif missingData == 'vf':
         acceleration = mv.get_acceleration()
         time = mv.get_time()
 
-        def vf_d(vo, a, t):
-            resultado = vo * t + ((a * (t ** 2)) / 2)
-            resultado = str(resultado)
-            print("El resultado es:\n" + resultado + "m")
+        result = mv.not_final_velocity_find_distance(initial_velocity, acceleration, time)
 
-        vf_d(initial_velocity, acceleration, time)
+        show_result(result, "m")
 
     elif unknown == 'vo':
+        # TODO: Without final velocity find initial velocity
         pass
 
     elif unknown == 't':
+        # TODO: Without final velocity find time
         pass
 
     elif unknown == 'a':
+        # TODO: Without final velocity find acceleration
         pass
     
     else:
@@ -157,39 +165,27 @@ elif missingData == 't':
         acceleration = mv.get_acceleration()
         final_velocity = mv.get_final_velocity()
 
-        def t_d(vo, a, vf):
-            resultado = ((vf ** 2) / (2 * a)) - ((vo ** 2) / (2 * a))
-            resultado = round(resultado, 2)
-            resultado = str(resultado)
-            print("El resultado es:\n" + resultado + "m")
+        result = mv.not_time_find_distance(initial_velocity, acceleration, final_velocity)
 
-        t_d(initial_velocity, acceleration, final_velocity)
+        show_result(result, "m")
 
     elif unknown == 'vo':
         distance = mv.get_distance()
         final_velocity = mv.get_final_velocity()
         acceleration = mv.get_acceleration()
 
-        def t_vo(d, vf, a):
-            resultado = math.sqrt((vf ** 2) - (2 * a * d))
-            resultado = round(resultado, 2)
-            resultado = str(resultado)
-            print("El resultado es:\n" + resultado + "m/s")
+        result = mv.not_time_find_initial_velocity(distance, final_velocity, acceleration)
 
-        t_vo(distance, final_velocity, acceleration)
+        show_result(result, "m/s")
 
     elif unknown == 'a':
         initial_velocity = mv.get_initial_velocity()
         final_velocity = mv.get_final_velocity()
         distance = mv.get_distance()
 
-        def t_a(vo, vf, d):
-            resultado = (((vf) ** 2) / (2 * d)) - ((vo) / (2 * d))
-            resultado = round(resultado, 2)
-            resultado = str(resultado)
-            print("El resultado es:\n" + resultado + "m/s")
+        result = mv.not_time_find_acceleration(initial_velocity, final_velocity, distance)
 
-        t_a(initial_velocity, final_velocity, distance)
+        show_result(result, "m/s^2")
 
     elif unknown == 'vf':
         initial_velocity = mv.get_initial_velocity()
