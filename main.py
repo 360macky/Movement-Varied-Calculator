@@ -66,7 +66,6 @@ if missingData == 'd':
     print("vo - Velocidad Inicial, t - Tiempo, a - Aceleración")
     unknown = mv.get_unknown_variable()
 
-    # Find final velocity
     if unknown == 'vf':
         initial_velocity = mv.get_initial_velocity()
         acceleration = mv.get_acceleration()
@@ -75,7 +74,6 @@ if missingData == 'd':
         result = mv.not_distance_find_final_velocity(initial_velocity, acceleration, time)
         show_result(result, "m/s")
 
-    # Find initial velocity
     elif unknown == 'vo':
         final_velocity = mv.get_final_velocity()
         acceleration = mv.get_acceleration()
@@ -84,7 +82,6 @@ if missingData == 'd':
         result = mv.not_distance_find_initial_velocity(final_velocity, acceleration, time)
         print("El resultado es: ", result, "m/s")
 
-    # Find acceleration
     elif unknown == 'a':
         final_velocity = mv.get_final_velocity()
         initial_velocity = mv.get_initial_velocity()
@@ -93,7 +90,6 @@ if missingData == 'd':
         result = mv.not_distance_find_acceleration(final_velocity, initial_velocity, time)
         show_result(result, "m/s^2")
 
-    # Find time
     elif unknown == 't':
         final_velocity = mv.get_final_velocity()
         initial_velocity = mv.get_initial_velocity()
@@ -109,7 +105,6 @@ elif missingData == 'a':
     print("vo - Velocidad Inicial, vf - Velocidad Final, t - Tiempo, d - Distancia")
     unknown = str(input("Genial, ingresa la variable que deseas hallar: "))
 
-    # Find final velocity
     if unknown == 'vo':
         distance = mv.get_distance()
         final_velocity = mv.get_final_velocity()
@@ -118,7 +113,6 @@ elif missingData == 'a':
         result = mv.not_acceleration_find_initial_velocity(distance, final_velocity, time)
         show_result(result, "m/s")
         
-    # Find distance
     elif unknown == 'd':
         initial_velocity = mv.get_initial_velocity()
         final_velocity = mv.get_final_velocity()
@@ -132,7 +126,6 @@ elif missingData == 'vf':
     print("d - Distancia, vo - Velocidad Inicial, t - Tiempo, a - Aceleración")
     unknown = str(input("Genial, ingresa la variable que deseas hallar: "))
 
-    # Find distance
     if unknown == 'd':
         initial_velocity = mv.get_initial_velocity()
         acceleration = mv.get_acceleration()
