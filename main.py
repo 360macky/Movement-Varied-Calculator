@@ -29,6 +29,7 @@ class MovementVariedCalculator:
     not_time_find_distance = lambda self, iv, a, fv: ((fv ** 2) / (2 * a)) - ((iv ** 2) / (2 * a))
     not_time_find_initial_velocity = lambda self, d, fv, a: math.sqrt((fv ** 2) - (2 * a * d))
     not_time_find_acceleration = lambda iv, fv, d: (((fv) ** 2) / (2 * d)) - ((iv) / (2 * d))
+    not_time_find_final_velocity = lambda iv, a, d: (((iv) ** 2) + 2 * a * d) ** (2 / 1)
 
     def get_unknown_variable(self):
         return str(input("Genial, ingresa la variable que deseas hallar: "))
@@ -192,13 +193,10 @@ elif missingData == 't':
         acceleration = mv.get_acceleration()
         distance = mv.get_distance()
 
-        def vf_d(vo, a, d):
-            resultado = (((vo) ** 2) + 2 * a * d) ** (2 / 1)
-            resultado = round(resultado, 2)
-            resultado = str(resultado)
-            print("El resultado es:\n" + resultado + "m/s")
+        result = mv.not_time_find_final_velocity(initial_velocity, acceleration, distance)
 
-        vf_d(initial_velocity, acceleration, distance)
+        show_result(result, "m/s^2")
+
     else:
         mv.print_variable_not_found()
 
