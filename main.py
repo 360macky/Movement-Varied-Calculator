@@ -1,14 +1,5 @@
 import math
 
-print("------- Movement-Varied-Calculator - MRUV Calculator Python -------")
-print("-------------------------------------------------------------------")
-print("|  _  _ _  _    ____ ____ _    ____ _  _ _    ____ ___ ____ ____  |")
-print("|  |\/| |  |    |    |__| |    |    |  | |    |__|  |  |  | |__/  |")
-print("|  |  |  \/     |___ |  | |___ |___ |__| |___ |  |  |  |__| |  \  |")
-print("-------------------------------------------------------------------")
-print("----------------------- Physics with Python -----------------------")
-
-
 class MovementVariedCalculator:
     """Uniform Rectilinear Motion Calculation"""
 
@@ -47,6 +38,13 @@ class MovementVariedCalculator:
         return int(input("Ingresa la distancia: "))
 
 
+print("------- Movement-Varied-Calculator - MRUV Calculator Python -------")
+print("-------------------------------------------------------------------")
+print("|  _  _ _  _    ____ ____ _    ____ _  _ _    ____ ___ ____ ____  |")
+print("|  |\/| |  |    |    |__| |    |    |  | |    |__|  |  |  | |__/  |")
+print("|  |  |  \/     |___ |  | |___ |___ |__| |___ |  |  |  |__| |  \  |")
+print("-------------------------------------------------------------------")
+print("----------------------- Physics with Python -----------------------")
 
 mv = MovementVariedCalculator()
 
@@ -55,10 +53,8 @@ print("| a  -> Aceleración     |")
 print("| vf -> Velocidad final |")
 print("| t  -> Tiempo          |")
 
-
 def show_result(result, type_result):
     print("El resultado es: ", result, type_result)
-
 
 missingData = str(input(">> ¿Qué variable te falta en la ecuación? "))
 
