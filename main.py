@@ -15,6 +15,7 @@ class MovementVariedCalculator:
 
     # Equations without final velocity
     not_final_velocity_find_distance = lambda self, vo, a, t: vo * t + ((a * (t ** 2)) / 2)
+    not_final_velocity_find_initial_velocity = lambda d, a, t: (d / t) - (a * t / 2)
 
     # Equations without time
     not_time_find_distance = lambda self, iv, a, fv: ((fv ** 2) / (2 * a)) - ((iv ** 2) / (2 * a))
@@ -132,8 +133,13 @@ elif missingData == 'vf':
         show_result(result, "m")
 
     elif unknown == 'vo':
-        # TODO: Without final velocity find initial velocity
-        pass
+        distance = mv.get_distance()
+        acceleration = mv.get_acceleration()
+        time = mv.get_time()
+
+        result = mv.not_final_velocity_find_initial_velocity(distance, acceleration, time)
+
+        show_result(result, "m/s")
 
     elif unknown == 't':
         # TODO: Without final velocity find time
