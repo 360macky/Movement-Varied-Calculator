@@ -29,4 +29,4 @@ python3 main.py
 ```
 
 ## ✒️ Desarrollador
-[Marcelo Arias Saavedra](https://360macky.blogspot.com/)
+[Marcelo Arias Saavedra](https://marceloarias.com/)
